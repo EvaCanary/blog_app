@@ -4,7 +4,7 @@ let post = {
 };
 const postTitleInputNode = document.querySelector('.js-post-title-input');
 const postTextInputNode = document.querySelector('.js-post-text-btn');
-const newPostBtnNode = document.querySelector('.js-new-post-btn')
+const newPostBtnNode = document.querySelector('.js-post-text-input')
 const postsNode = document.querySelector('.js-posts');
 
 newPostBtnNode.addEventListener('click', function(){
