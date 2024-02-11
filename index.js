@@ -29,7 +29,7 @@ function getPostFromUser() {
  //сохранить пост
 
 function setPosts(postsFromUser) {
-  post.push(postFromUser);
+  post.push(postsFromUser);
 }
 
 function getPosts() {
