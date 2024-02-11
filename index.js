@@ -1,7 +1,5 @@
-let posts = [
-    title: '',
-    text: '',
-];
+let posts = [];
+
 const postTitleInputNode = document.querySelector('.js-post-title-input');
 const postTextInputNode = document.querySelector('.js-post-text-input');
 const newPostBtnNode = document.querySelector('.js-new-post-btn');
@@ -9,11 +7,11 @@ const postsNode = document.querySelector('.js-posts');
 
 newPostBtnNode.addEventListener('click', function(){
 
- const postsFromUser = getPostsFromUser();
+ const postFromUser = getPostFromUser();
    
- setPosts(postsFromUser);
+ setPost(postFromUser);
 
- renderPosts();
+ renderPost();
 });
    
  //получить данные из поля вводы
@@ -28,29 +26,26 @@ function getPostFromUser() {
 }
  //сохранить пост
 
-function setPosts(postsFromUser) {
-  post.push(postsFromUser);
+function setPost(postFromUser) {
+    posts.push(postFromUser);
+}
+function getPost() {
+    return posts;
 }
 
-function getPosts() {
-    return post;
-}
+ //отобразить пост
 
-//отобразить пост
+function renderPost() {
+const posts = getPost();
 
-function renderPosts() {
-const posts = getPosts();
-    
-let postsHTML = ''; 
-
- posts.forEach(posts => {
+let postsHTML = '';
+posts.forEach((post) => {
     postsHTML += `
-      <div class='posts'>
-        <p class='post__title'>${post.title}</p>
-        <p class='post__text'>${post.text}</p>
-      </div>
-    `;
-  });
-
-postsNode.innerHTML = postHTML;
+    <div class='post'>
+       <p class='post__title'>${post.title}</p>
+       <p class='post__text'>${post.text}</p>
+    </div>
+    `
+} );
+postsNode.innerHTML = postsHTML;
 }
