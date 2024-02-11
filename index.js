@@ -1,7 +1,7 @@
-let post = {
+let posts = [
     title: '',
     text: '',
-};
+];
 const postTitleInputNode = document.querySelector('.js-post-title-input');
 const postTextInputNode = document.querySelector('.js-post-text-input');
 const newPostBtnNode = document.querySelector('.js-new-post-btn');
@@ -28,9 +28,10 @@ function getPostFromUser() {
 }
  //сохранить пост
 
-function setPost(post) {
-    post = newPost;
+function setPost(postFromUser) {
+  post.push(postFromUser);
 }
+
 function getPost() {
     return post;
 }
@@ -39,13 +40,17 @@ function getPost() {
 
 function renderPost() {
 const post = getPost();
+    
+let postsHTML = ''; 
 
-const postHTML =`
-<div class='post'>
-   <p class='post__title'>${post.title}</p>
-   <p class='post__text'>${post.text}</p>
-</div>
-`;
+ posts.forEach(post => {
+    postsHTML += `
+      <div class='post'>
+        <p class='post__title'>${post.title}</p>
+        <p class='post__text'>${post.text}</p>
+      </div>
+    `;
+  });
 
 postsNode.innerHTML = postHTML;
 }
