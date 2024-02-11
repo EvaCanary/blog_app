@@ -9,11 +9,11 @@ const postsNode = document.querySelector('.js-posts');
 
 newPostBtnNode.addEventListener('click', function(){
 
- const postFromUser = getPostFromUser();
+ const postsFromUser = getPostsFromUser();
    
- setPost(postFromUser);
+ setPosts(postsFromUser);
 
- renderPost();
+ renderPosts();
 });
    
  //получить данные из поля вводы
@@ -28,24 +28,24 @@ function getPostFromUser() {
 }
  //сохранить пост
 
-function setPost(postFromUser) {
+function setPosts(postsFromUser) {
   post.push(postFromUser);
 }
 
-function getPost() {
+function getPosts() {
     return post;
 }
 
 //отобразить пост
 
-function renderPost() {
-const post = getPost();
+function renderPosts() {
+const posts = getPosts();
     
 let postsHTML = ''; 
 
- posts.forEach(post => {
+ posts.forEach(posts => {
     postsHTML += `
-      <div class='post'>
+      <div class='posts'>
         <p class='post__title'>${post.title}</p>
         <p class='post__text'>${post.text}</p>
       </div>
