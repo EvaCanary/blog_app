@@ -3,8 +3,8 @@ let post = {
     text: '',
 };
 const postTitleInputNode = document.querySelector('.js-post-title-input');
-const postTextInputNode = document.querySelector('.js-post-text-btn');
-const newPostBtnNode = document.querySelector('.js-post-text-input')
+const postTextInputNode = document.querySelector('.js-post-text-input');
+const newPostBtnNode = document.querySelector('.js-new-post-btn')
 const postsNode = document.querySelector('.js-posts');
 
 newPostBtnNode.addEventListener('click', function(){
