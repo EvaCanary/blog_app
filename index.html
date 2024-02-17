@@ -15,17 +15,21 @@
   </head>
   <body>
     <h1>Приложение блог</h1>
-
     <div class="row">
       <div class="col">
         <h2>Новый пост</h2>
         <input class="js-post-title-input post-title-input" type="text" />
-        <input class="js-post-text-input post-text-input" type="text" />
+        <textarea
+          class="js-post-text-input post-text-input"
+          type="text"
+        ></textarea>
         <button class="js-new-post-btn new-post-btn">Опубликовать</button>
+        <div class="js-validation-message validationMessage_hidden">
+          Длинна заголовка не должна превышать 100 символов
+        </div>
       </div>
       <div class="col">
         <h2>Лента</h2>
-
         <div class="js-posts posts">Лента пуста...</div>
       </div>
     </div>
