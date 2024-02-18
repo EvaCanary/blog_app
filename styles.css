@@ -62,6 +62,7 @@ h2 {
 }
 .validationMessage {
     color: #ff3636;
-
-
+}
+.validationMessage {
+display: none;
 }
