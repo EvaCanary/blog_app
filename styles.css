@@ -1,6 +1,9 @@
 body {
     background-color: #17181D;
 }
+.col {
+    padding-top: 100px;
+}
 .post-title-input {
     display: block;
     box-sizing: border-box;
@@ -15,6 +18,8 @@ body {
     display: block;
     box-sizing: border-box;
     border-radius: 20px;
+    line-height: 60px;
+    letter-spacing: -0.48px;
     border: 0;
     width: 500px;
 }
@@ -40,8 +45,17 @@ body {
     gap: 50px;
     margin-left: 217px;
 }
+.post__date {
+    margin-bottom: 10px;
+}
+.post__title {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.post__text {
+    margin-bottom: 40px;
+}
 h1 {
-    margin-left: 217px;
     margin-bottom: 50px;
     font-size: 40px;
     font-weight: 700;
@@ -64,5 +78,5 @@ h2 {
     color: #ff3636;
 }
 .validationMessage_hidden {
-display: none;
+    display: none;
 }

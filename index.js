@@ -48,17 +48,29 @@ function getPostFromUser() {
 }
 
 function addPost({ title, text }) {
+    const currentDate = new Date();
+    const day = currentDate.getDate();
+    const month = currentDate.getMonth() + 1; // Не изменяется
+    const year = currentDate.getFullYear();
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
+    
+    const dt = `${day}.${(month < 10 ? '0' : '')}${month}.${year} ${hours}:${minutes}`;
+
     posts.push({
+        dt,
         title,
         text,
     });
 }
+
 
 function renderPosts() {
     let postsHTML = '';
     posts.forEach(post => {
         postsHTML += ` 
         <div class='post'>
+        <p class='post__date'>${post.dt}</p>
         <p class='post__title'>${post.title}</p>
         <p class='post__text'>${post.text}</p>
         </div>`;
