@@ -11,6 +11,18 @@ const validationMessage = document.querySelector(".js-validation-message"); // C
 
 newPostBtnNode.addEventListener('click', function() {
     validation(); // Call validation before adding a new post
+        const titleLen = postTitleInputNode.value;
+        const textLen = postTextInputNode.value;
+        
+      if (titleLen === "" || textLen === "") {
+        return; // прекращаем выполнение функции и не добавляем пост
+      }
+      if (
+        titleLen.length >= TITLE_VALIDATION_LIMIT ||
+        textLen.length >= TEXT_VALIDATION_LIMIT
+      ) {
+        return; // прекращаем выполнение функции и не добавляем пост
+      }
     const postFromUser = getPostFromUser();    
     addPost(postFromUser);
     renderPosts();
@@ -23,7 +35,7 @@ function validation(){
    const titleLen = postTitleInputNode.value.length;
    const textLen = postTextInputNode.value.length;
 
-   if (titleLen > TITLE_VALIDATION_LIMIT){
+   if (titleLen === "" || titleLen > TITLE_VALIDATION_LIMIT){
      validationMessage.innerText = `Длинна заголовка не должна превышать ${TITLE_VALIDATION_LIMIT} символов`; // Corrected message
      validationMessage.classList.remove("validationMessage_hidden");
      return;
